@@ -1,4 +1,4 @@
-import { Wrapper, TitleWrapper, CategoryWrapper, Contact } from "./PostFooter.styles";
+import { Wrapper, TitleWrapper, CategoryWrapper, Contact, Nickname } from "./PostFooter.styles";
 import Kakao from "../../assets/icons/kakao.svg";
 import Instargram from "../../assets/icons/instargram.svg";
 import Pen from "../../assets/icons/pen.svg";
@@ -8,10 +8,19 @@ import { useState, useEffect } from "react";
 
 export default function Footer() {
     const [title, setTitle] = useState("");
+    const [nickname, setNickname] = useState("@User"); // 서버에서 받아올 사용자 닉네임 기본값
 
     const handleTitleChange = (e) => {
         setTitle(e.target.value);
     };
+
+    useEffect(() => {
+        // 서버에서 사용자 닉네임 가져오는 로직 (예제)
+        fetch("/api/...")
+          .then((res) => res.json())
+          .then((data) => setNickname(data.nickname))
+          .catch(() => setNickname("@User")); // 오류 시 기본값
+      }, []);
 
     return (
         <Wrapper>
@@ -21,7 +30,6 @@ export default function Footer() {
                     <input
                         type="text"
                         value={title}
-                        onChange={handleTitleChange}
                         placeholder="제목을 입력하세요"
                     />
                 </div>
@@ -36,6 +44,7 @@ export default function Footer() {
                     <option value="culture">컬쳐</option>
                 </select>
             </CategoryWrapper>
+            <Nickname>{nickname}</Nickname>
             <Contact>
                 <p>editor@antiegg.kr ㅣ 0507-1336-9142 © ANTIEGG All rights reserved</p>
                 <div className="icons">

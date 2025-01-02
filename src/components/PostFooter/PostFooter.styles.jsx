@@ -26,7 +26,24 @@ export const TitleWrapper = styled.div`
     margin: 0;
   }
 `;
-
+export const Nickname = styled.Nickname`
+  display: flex;
+  margin-top: 60px;
+  justify-content: space-between;
+  > p {
+    color: #797979;
+    font-size: 11px;
+  }
+  > .icons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    > img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+`;
 export const CategoryWrapper = styled.div`
   margin-top: 20px;
   select {
