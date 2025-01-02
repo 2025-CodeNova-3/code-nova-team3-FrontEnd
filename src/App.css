@@ -1,0 +1,13 @@
+button {
+  outline: none;
+  border: none;
+}
+input {
+  border: none;
+}
+input:focus {
+  outline: none;
+}
+button {
+  cursor: pointer;
+}

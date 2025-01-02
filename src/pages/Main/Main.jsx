@@ -1,3 +1,9 @@
+import Header from "../../components/Header/Header";
+
 export default function Main() {
-  return <div>hi</div>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 }
