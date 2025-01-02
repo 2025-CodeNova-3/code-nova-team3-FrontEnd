@@ -24,7 +24,8 @@ export default function OutPutFooter() {
     return (
         <Wrapper>
             <TitleWrapper>
-                {title}
+                <div>제목</div>
+                <div>{title}</div>
             </TitleWrapper>
             <CategoryWrapper>
                 <div>카테고리</div>

@@ -15,37 +15,28 @@ export const Wrapper = styled.div`
   }
 `;
 export const TitleWrapper = styled.div`
-    input {
-      background-color: transparent; /* 배경 투명 */
-      border: none; /* 테두리 제거 */
-      color: white; /* 텍스트 색상 */
-      font-size: 16px; /* 텍스트 크기 */
-      outline: none; /* 포커스 시 테두리 제거 */
-      width: 100%; /* 원하는 너비 */
+      background-color: transparent;
+      border: none;
+      color: white;
+      font-size: 16px;
+      outline: none;
+      width: 100%;
       margin-bottom: 10px;
-    }
-
-    input::placeholder {
-      color: #ccc; /* 플레이스홀더 색상 */
-      font-style: italic; /* 플레이스홀더 스타일 */
-    }
-
-  hr {
-    border: none;
-    border-top: 1px solid white;
-    margin: 0;
-  }
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ffffff;;
 `;
 export const Nickname = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
   margin-top: 20px;
   font-size: 14px;
   color: #797979;
 `;
 export const CategoryWrapper = styled.div`
-  display: flex; /* 플렉스 박스 활성화 */
-  flex-direction: row; /* 가로로 나열 */
-  align-items: center; /* 세로 정렬(중앙 정렬) */
-  gap: 10px; /* 요소 간 간격 */
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  gap: 10px; 
   margin-top: 15px;
 
   div {
