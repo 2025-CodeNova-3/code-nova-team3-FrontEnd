@@ -1,15 +1,16 @@
 import { useState } from "react";
 import delete1 from "../../assets/icons/delete1.svg";
-import delete2 from "../../assets/icons/delete2.svg";
 import Tmm from "../../assets/icons/Tmm.svg";
 import line from "../../assets/icons/line.svg";
-import { Wrapper, LoginButton, SigninButton } from "./LoginPopup.styles";
 import Login from "../../apis/login.js";
 
-export default function LoginPopup({ setOnModal, login, setLogin }) {
-  // 상태 관리 추가
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+
+import { Wrapper, Container, InputBox, Bottom, ModalLogo, CloseButton } from "./LoginPopup.styles";
+
+export default function LoginPopup({ setOnModal, setOnModal2 }) {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
 
   const handleSignIn = async (e) => {
     e.preventDefault();
@@ -29,77 +30,65 @@ export default function LoginPopup({ setOnModal, login, setLogin }) {
   };
 
   // 회원가입 버튼 함수
-  const handleSignUp = (e) => {
-    e.preventDefault();
-    setOnModal(false);
-  };
-
+   const handleSignUp = (e) => {
+        e.preventDefault();
+        setOnModal(false);
+        setOnModal2(true);
+    };
   // 입력 필드 초기화 함수
   const clearInput = (setInputFunc) => {
     setInputFunc(""); // 입력 필드 초기화
   };
 
-  return (
-    <Wrapper>
-      <button
-        type="button"
-        className="CloseButton"
-        onClick={() => setOnModal(false)}
-      >
-        <img src={delete1} alt="닫기" />
-      </button>
-      <img alt="Tmm" src={Tmm} className="ModalLogo" />
-      <form>
-        <div>
-          <label htmlFor="id">아이디 또는 전화번호</label>
-          <div className="InputContainer">
-            <input
-              id="username"
-              className="ModalIdInput"
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-            <button
-              type="button"
-              className="ClearButton"
-              onClick={() => clearInput(setUsername)}
-            >
-              <img src={delete2} alt="초기화" />
-            </button>
-          </div>
-        </div>
+ 
 
-        <div>
-          <label htmlFor="password">비밀번호</label>
-          <div className="InputContainer">
-            <input
-              id="password"
-              className="ModalPasswordInput"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button
-              type="button"
-              className="ClearButton"
-              onClick={() => clearInput(setPassword)}
+    return (
+        <Wrapper>
+            <Container>
+            <CloseButton
+                type="button"
+                className="CloseButton"
+                onClick={() => setOnModal(false)}
             >
-              <img src={delete2} alt="초기화" />
-            </button>
-          </div>
-        </div>
-      </form>
-      <LoginButton className="ModalLoginButton" onClick={handleSignIn}>
-        로그인
-      </LoginButton>
-      <SigninButton>
-        <button onClick={handleSignUp}>
-          <img src={line} alt="line" />
-          회원가입
-          <img src={line} alt="line" />
-        </button>
-      </SigninButton>
-    </Wrapper>
-  );
+
+                <img src={delete1} alt="닫기" />
+            </CloseButton>
+
+            <ModalLogo alt="Tmm" src={Tmm} className="ModalLogo" />
+
+            <InputBox>
+                <div>이름</div>
+                <input
+                    id="username"
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+            </InputBox>
+            <InputBox>
+                <div>비밀번호</div>
+                <input
+                    id="password"
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+            </InputBox>
+
+            <Bottom>
+                <button className="ModalLoginButton" onClick={handleSignIn}>
+                    로그인
+                </button>
+                <div>
+                    <img src={line} />
+                    <button className="SigninButton" onClick={handleSignUp}>
+                        회원가입
+                    </button>
+                    <img src={line} />
+                </div>
+            </Bottom>
+            </Container>
+        </Wrapper>
+    );
+
 }
