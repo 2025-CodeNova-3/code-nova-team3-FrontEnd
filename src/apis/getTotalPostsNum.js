@@ -1,15 +1,15 @@
 import instance from "./instance";
-const GetSurvey = async (surveyId) => {
+const GetTotalPostsNum = async () => {
   try {
-    const response = await instance.get(`api/survey/${surveyId}`);
-    console.log(response);
+    const response = await instance.get(`api/totalPost-num`);
     return response.data;
   } catch (error) {
     if (error.response) {
+      console.log(error.response);
       if (error.response.status === 401) {
         alert("잘못된 요청입니다.");
       } else if (error.response.status === 500) {
-        alert("survey를 가져올 수 없습니다.");
+        alert("posts의 수를 가져올 수 없습니다.");
       } else {
         alert("잠시 후 다시 시도해주세요.");
       }
@@ -17,4 +17,4 @@ const GetSurvey = async (surveyId) => {
     throw error;
   }
 };
-export default GetSurvey;
+export default GetTotalPostsNum;

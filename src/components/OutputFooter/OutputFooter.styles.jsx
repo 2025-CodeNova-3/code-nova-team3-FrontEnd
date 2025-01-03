@@ -6,24 +6,25 @@ export const Wrapper = styled.div`
   height: 276px;
   display: flex;
   flex-direction: column;
-  padding: 0 30px;
+  padding: 0 90px;
   justify-content: center;
   background-color: black;
   box-sizing: border-box;
   > * {
     color: white;
+    box-sizing: border-box;
   }
 `;
 export const TitleWrapper = styled.div`
-      background-color: transparent;
-      border: none;
-      color: white;
-      font-size: 16px;
-      outline: none;
-      width: 100%;
-      margin-bottom: 10px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #ffffff;;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  width: 100%;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ffffff;
 `;
 export const Nickname = styled.div`
   display: flex;
@@ -36,7 +37,7 @@ export const CategoryWrapper = styled.div`
   display: flex;
   flex-direction: row;
   margin-left: auto;
-  gap: 10px; 
+  gap: 10px;
   margin-top: 15px;
 
   div {
