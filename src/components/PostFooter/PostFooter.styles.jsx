@@ -6,29 +6,30 @@ export const Wrapper = styled.div`
   height: 276px;
   display: flex;
   flex-direction: column;
-  padding: 0 30px;
+  padding: 0 90px;
   justify-content: center;
   background-color: black;
   box-sizing: border-box;
   > * {
     color: white;
+    box-sizing: border-box;
   }
 `;
 export const TitleWrapper = styled.div`
-    input {
-      background-color: transparent; /* 배경 투명 */
-      border: none; /* 테두리 제거 */
-      color: white; /* 텍스트 색상 */
-      font-size: 16px; /* 텍스트 크기 */
-      outline: none; /* 포커스 시 테두리 제거 */
-      width: 100%; /* 원하는 너비 */
-      margin-bottom: 10px;
-    }
+  input {
+    background-color: transparent; /* 배경 투명 */
+    border: none; /* 테두리 제거 */
+    color: white; /* 텍스트 색상 */
+    font-size: 16px; /* 텍스트 크기 */
+    outline: none; /* 포커스 시 테두리 제거 */
+    width: 100%; /* 원하는 너비 */
+    margin-bottom: 10px;
+  }
 
-    input::placeholder {
-      color: #ccc; /* 플레이스홀더 색상 */
-      font-style: italic; /* 플레이스홀더 스타일 */
-    }
+  input::placeholder {
+    color: #ccc; /* 플레이스홀더 색상 */
+    font-style: italic; /* 플레이스홀더 스타일 */
+  }
 
   hr {
     border: none;

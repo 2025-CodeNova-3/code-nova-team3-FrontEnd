@@ -1,11 +1,11 @@
 import { Suspense, useEffect, useState } from "react";
 import { Wrapper, Categorys, Posts, Title } from "./Contents.styles";
 import Top4 from "../Top4/Top4";
-import PostsNumSkeleton from "../../components/PostsNumSkeleton";
+import PostsNumSkeleton from "../../components/PostsNumSkeleton/Skeleton";
 import PostsSkeleton from "../../components/PostsSkeleton/PostSkeleton";
 import PostsNum from "../PostsNum/PostsNum";
 import GetTotalPostsNum from "../../apis/getTotalPostsNum";
-import { useTotalPosts } from "../../hook/useLogin";
+import { useTotalPosts } from "../../hook/useTotalPosts.js";
 
 export default function Contents() {
   const [selectedCategory, setSelectedCategory] = useState("ALL");

@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   padding: 0px 25px;
   margin-top: 15px;
+  box-sizing: border-box;
 
   textarea {
     width: 100%;

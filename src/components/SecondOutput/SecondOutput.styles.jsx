@@ -8,4 +8,5 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   border: solid #e4e3e3 1px;
   background-color: #fbf8f8;
+  box-sizing: border-box;
 `;
