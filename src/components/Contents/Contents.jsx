@@ -15,7 +15,7 @@ export default function Contents() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const categories = ["ALL", "ART", "PEOPLE", "CULTURE", "PLACE", "BRAND"];
+  const categories = ["ALL", "ESSAY", "POEM", "NOVEL", "BOOK", "SOCIAL", "ROMANCE", "COMEDY", "SF", "FANTASY"];
 
   // 🚀 카테고리 및 페이지에 따라 데이터를 로드하는 함수
   const loadCategoryData = async (reset = false) => {
