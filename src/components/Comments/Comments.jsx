@@ -6,15 +6,13 @@ import {
   InputField,
   SubmitButton,
 } from "./Comments.styles";
+
 import GetComments from "../../apis/getComment";
 import PostComments from "../../apis/postComments";
 
 export default function Comments({ boardId }) {
   const [comments, setComments] = useState([]); // 기존 댓글 리스트 상태
   const [newComment, setNewComment] = useState(""); // 새 댓글 입력 상태
-  const [userComments, setUserComments] = useState([]); // 사용자가 입력한 댓글 상태
-
-  // 댓글 목록 가져오기
   useEffect(() => {
     const fetchComments = async () => {
       try {
@@ -81,6 +79,7 @@ export default function Comments({ boardId }) {
           </Comment>
         ))}
       </div>
+
       {/* 댓글 입력창 */}
       <InputWrapper>
         <InputField
@@ -89,7 +88,7 @@ export default function Comments({ boardId }) {
           onChange={(e) => setNewComment(e.target.value)}
           placeholder="작품에 관하여 자유롭게 의견을 나눠보세요"
         />
-        <SubmitButton onClick={handleSubmit}>전송</SubmitButton>
+        <SubmitButton>전송</SubmitButton>
       </InputWrapper>
     </Wrapper>
   );

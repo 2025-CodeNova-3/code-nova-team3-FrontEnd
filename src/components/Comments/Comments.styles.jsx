@@ -21,6 +21,7 @@ export const Comment = styled.div`
     float: right;
     color: black;
   }
+
   > .wrapper {
     display: flex;
     flex-direction: column;
@@ -31,6 +32,10 @@ export const Comment = styled.div`
     > .content {
       font-size: 14px;
     }
+  }
+
+  > .comment {
+    font-size: 14px;
   }
 `;
 export const Wrapper = styled.div`
