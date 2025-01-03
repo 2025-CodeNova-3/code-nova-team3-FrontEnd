@@ -3,9 +3,11 @@ import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Contents from "../../components/Contents/Contents";
 import { Img } from "./Main.styles";
+import Button from "../../components/Button/Button";
 export default function Main() {
   return (
     <>
+      <Button />
       <Header />
       <Img>
         <img src={MainImg} alt="main img" />
