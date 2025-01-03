@@ -44,24 +44,31 @@ export const Nickname = styled.div`
 `;
 export const CategoryWrapper = styled.div`
   display: flex; /* 플렉스 박스 활성화 */
-  flex-direction: row; /* 가로로 나열 */
   align-items: center; /* 세로 정렬(중앙 정렬) */
-  gap: 10px; /* 요소 간 간격 */
+  gap: 20px; /* 요소 간 간격 */
   margin-top: 15px;
 
-  div {
+  > .title {
     font-size: 16px;
+    color: #cbcbcb;
   }
-
-  select {
-    width: 200px;
-    height: 30px;
-    background: none;
-    border: 1px solid white;
-    color: white;
-    font-size: 14px;
-    padding: 5px;
-    outline: none;
+  > .categories {
+    display: flex;
+    gap: 20px;
+    > p {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 22px;
+      font-size: 15px;
+      padding: 5px 10px;
+      background-color: #4b4b4b;
+    }
+    > .click {
+      background-color: #ec3f0a;
+      color: white;
+    }
   }
 `;
 

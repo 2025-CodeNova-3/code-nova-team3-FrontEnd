@@ -1,13 +1,17 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  width: 80%;
-  height: 300px;
+  display: flex;
+  padding: 20px;
+  line-height: 1.5;
+  width: 60%;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   margin-top: 94px;
   border: solid #e4e3e3 1px;
-  background-color: #fbf8f8;
+  border-bottom: none;
+
   box-sizing: border-box;
 `;
