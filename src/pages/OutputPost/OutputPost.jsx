@@ -1,14 +1,13 @@
-import OutputFooter from '../../components/OutputFooter/OutputFooter';
-import Header from '../../components/Header/Header';
-import FirstOutput from '../../components/FirstOutput/FirstOutput';
-import SecondOutput from '../../components/SecondOutput/SecondOutput';
+import OutputFooter from "../../components/OutputFooter/OutputFooter";
+import Header from "../../components/Header/Header";
+import Output from "../../components/Output/Output";
 
 const OutputPost = () => {
   return (
     <>
       <Header />
-      <FirstOutput />
-      <SecondOutput />
+      <Output />
+
       <OutputFooter />
     </>
   );

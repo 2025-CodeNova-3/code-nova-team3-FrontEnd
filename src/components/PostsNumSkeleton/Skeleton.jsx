@@ -5,8 +5,9 @@ export default function Skeleton() {
 }
 const Wrapper = styled.div`
   display: flex;
-  width: 100%;
+  width: 300px;
   height: 45px;
+  margin: 0 auto;
 
   margin-top: 50px;
   justify-content: center;
