@@ -1,7 +1,7 @@
 import instance from "./instance";
 const GetTotalPostsNum = async () => {
   try {
-    const response = await instance.get(`api/totalPost-num`);
+    const response = await instance.post(`api/auth/sign-up`);
     return response.data;
   } catch (error) {
     if (error.response) {
