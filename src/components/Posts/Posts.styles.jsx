@@ -1,5 +1,7 @@
 import styled from "styled-components";
+
 export const Content = styled.div`
+  cursor: pointer;
   width: inherit;
   height: 40px;
   display: flex;
@@ -12,6 +14,9 @@ export const Content = styled.div`
     margin-left: 20px;
     width: 200px;
     height: 20px;
+    white-space: nowrap; /* 줄바꿈 방지 */
+    overflow: hidden; /* 넘치는 텍스트 숨기기 */
+    text-overflow: ellipsis; /* 넘치는 부분에 ... 표시 */
   }
 `;
 

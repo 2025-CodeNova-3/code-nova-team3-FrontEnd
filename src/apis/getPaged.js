@@ -1,6 +1,5 @@
 import instance from "./instance";
-
-const GetTotalPostsNum = async () => {
+const GetPaged = async (category = "BRAND", currentPage) => {
   const token = sessionStorage.getItem("accessToken");
 
   if (!token) {
@@ -9,12 +8,16 @@ const GetTotalPostsNum = async () => {
   }
 
   try {
-    const response = await instance.get(`api/boards/counts`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-
+    const response = await instance.get(
+      `api/boards/paged?boardCategory=${category}&page=${
+        currentPage - 1
+      }&size=10`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     return response.data;
   } catch (error) {
     if (error.response) {
@@ -22,7 +25,7 @@ const GetTotalPostsNum = async () => {
       if (error.response.status === 401) {
         alert("잘못된 요청입니다.");
       } else if (error.response.status === 500) {
-        alert("posts의 수를 가져올 수 없습니다.");
+        alert("posts를 가져올 수 없습니다.");
       } else {
         alert("잠시 후 다시 시도해주세요.");
       }
@@ -31,4 +34,4 @@ const GetTotalPostsNum = async () => {
   }
 };
 
-export default GetTotalPostsNum;
+export default GetPaged;

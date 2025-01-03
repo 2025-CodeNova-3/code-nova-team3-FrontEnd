@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function PostPage({ totalPosts, onPageChange, currentPage }) {
+export default function PostsNum({ totalPosts, onPageChange, currentPage }) {
   const totalPages = calculatePages(totalPosts);
 
   return (
@@ -19,8 +19,7 @@ export default function PostPage({ totalPosts, onPageChange, currentPage }) {
   );
 }
 function calculatePages(totalItems) {
-  if (totalItems <= 10) return 1;
-  return 1 + Math.ceil((totalItems - 10) / 20);
+  return Math.ceil(totalItems / 10);
 }
 
 const Wrapper = styled.div`

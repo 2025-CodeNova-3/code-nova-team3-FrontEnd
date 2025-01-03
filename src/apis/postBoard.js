@@ -14,7 +14,7 @@ const GetTotalPostsNum = async () => {
         Authorization: `Bearer ${token}`,
       },
     });
-
+    console.log("su");
     return response.data;
   } catch (error) {
     if (error.response) {

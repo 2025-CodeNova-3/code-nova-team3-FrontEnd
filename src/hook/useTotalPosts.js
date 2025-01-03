@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export function useTotalPosts() {
-  const [totalPosts, settotalPosts] = useState(null);
+  const [totalPosts, setTotalPosts] = useState(0);
 
-  return { totalPosts, settotalPosts };
+  return { totalPosts, setTotalPosts };
 }

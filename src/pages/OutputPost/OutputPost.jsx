@@ -3,7 +3,7 @@ import Header from "../../components/Header/Header";
 import Output from "../../components/Output/Output";
 import Comments from "../../components/Comments/Comments";
 
-const OutputPost = () => {
+const OutputPost = ({ login, setLogin }) => {
   return (
     <>
       <Header />
