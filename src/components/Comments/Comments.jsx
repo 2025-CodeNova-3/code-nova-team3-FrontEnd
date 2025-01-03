@@ -6,6 +6,7 @@ import {
   InputField,
   SubmitButton,
 } from "./Comments.styles";
+import GetComments from "../../apis/getComments";
 
 import GetComments from "../../apis/getComment";
 import PostComments from "../../apis/postComments";
@@ -22,6 +23,7 @@ export default function Comments({ boardId }) {
         console.error("댓글을 가져오는 중 오류 발생:", error);
       }
     };
+
 
     fetchComments();
   }, [boardId]);
@@ -79,6 +81,7 @@ export default function Comments({ boardId }) {
           </Comment>
         ))}
       </div>
+
 
       {/* 댓글 입력창 */}
       <InputWrapper>

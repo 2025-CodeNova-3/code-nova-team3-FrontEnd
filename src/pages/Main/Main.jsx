@@ -41,6 +41,7 @@ export default function Main({ login, setLogin }) {
 
       {login && <Button />}
       {login && <Sidebar />}
+
     </>
   );
 }
