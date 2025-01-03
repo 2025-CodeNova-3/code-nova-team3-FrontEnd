@@ -29,6 +29,8 @@ export default function LoginPopup({
       setOnModal(false); // 모달 닫기
       if (result.code == 2000) {
         setLogin(true);
+        sessionStorage.setItem("username", username);
+        sessionStorage.setItem("userId", result.data.userId);
         sessionStorage.setItem("login", true);
         sessionStorage.setItem("accessToken", result.data.access);
       } else if (result.status.code == 2001) {

@@ -1,23 +1,17 @@
 import instance from "./instance";
-const GetPaged = async (category = "BRAND", currentPage) => {
+const GetResent = async () => {
   const token = sessionStorage.getItem("accessToken");
 
   if (!token) {
     alert("로그인이 필요합니다.");
     throw new Error("No token found");
   }
-
   try {
-    const response = await instance.get(
-      `api/boards/paged?boardCategory=${category}&page=${
-        currentPage - 1
-      }&size=10`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const response = await instance.get(`/api/boards/recent`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     return response.data;
   } catch (error) {
     if (error.response) {
@@ -25,7 +19,7 @@ const GetPaged = async (category = "BRAND", currentPage) => {
       if (error.response.status === 401) {
         alert("잘못된 요청입니다.");
       } else if (error.response.status === 500) {
-        alert("page를 가져올 수 없습니다.");
+        alert("최신 기록을 가져올 수 없습니다.");
       } else {
         alert("잠시 후 다시 시도해주세요.");
       }
@@ -33,5 +27,4 @@ const GetPaged = async (category = "BRAND", currentPage) => {
     throw error;
   }
 };
-
-export default GetPaged;
+export default GetResent;

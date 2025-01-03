@@ -1,9 +1,8 @@
-import React from "react";
 import { Wrapper } from "./PostHeader.styels";
-import Logo from "../../assets/icons/logo.svg";
+
 import penpen from "../../assets/icons/penpen.svg";
 import { useNavigate } from "react-router-dom";
-
+import Tmm from "../../assets/icons/Tmm.svg";
 export default function PostHeader({ handleSubmit }) {
   const navigator = useNavigate();
   const handleMain = () => {
@@ -14,7 +13,7 @@ export default function PostHeader({ handleSubmit }) {
   return (
     <Wrapper>
       <div className="title" onClick={handleMain}>
-        <img src={Logo} alt="Logo" />
+        <img src={Tmm} alt="Logo" />
       </div>
       <div className="left">
         <button onClick={handleSubmit}>

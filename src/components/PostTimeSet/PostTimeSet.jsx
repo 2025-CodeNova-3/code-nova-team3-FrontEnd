@@ -24,9 +24,17 @@ const PostTimeSet = ({ selectedOption, setSelectedOption, setCustomInput }) => {
   };
 
   const handleInputChange = (e) => {
-    setCustomInput(e.target.value); // 직접 입력값 업데이트
-  };
+    const value = e.target.value;
 
+    // 입력값이 비어 있거나 숫자가 아닌 경우 예외 처리
+    if (!value || isNaN(value)) {
+      setCustomInput(0);
+      return;
+    }
+
+    // 숫자 값으로 상태 업데이트
+    setCustomInput(Number(value));
+  };
   return (
     <TimeTable>
       <Text>이 내용은</Text>
@@ -76,7 +84,7 @@ const PostTimeSet = ({ selectedOption, setSelectedOption, setCustomInput }) => {
           </SelectBox>
         ) : (
           <Input
-            type="text"
+            type="number"
             onChange={handleInputChange}
             placeholder="시간입력 (분)"
           />

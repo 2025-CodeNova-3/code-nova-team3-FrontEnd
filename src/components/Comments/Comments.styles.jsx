@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
 export const Comment = styled.div`
-  width: 542px;
-  height: 92px;
+  width: 500px;
+  height: 80px;
   border-radius: 10px;
   border-bottom-left-radius: 0;
-
   color: white;
   padding: 20px;
   display: flex;
@@ -13,15 +12,25 @@ export const Comment = styled.div`
   gap: 5px;
   color: #9c9c9c;
   background-color: #727272;
+  margin-bottom: 20px;
   box-sizing: border-box;
-  > .userId {
-    font-size: 12px;
+  &.user {
+    background-color: #ec3f0a;
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+    float: right;
+    color: black;
   }
-  > .comment {
-    font-size: 14px;
-  }
-  > .timer {
-    font-size: 10px;
+  > .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    > .username {
+      font-size: 12px;
+    }
+    > .content {
+      font-size: 14px;
+    }
   }
 `;
 export const Wrapper = styled.div`
@@ -35,12 +44,18 @@ export const Wrapper = styled.div`
   padding: 50px 90px;
 
   > .title {
-    font-size: 32px;
+    font-size: 25px;
     color: white;
+    margin-bottom: 50px;
+  }
+  > .comment-wrap {
+    width: 800px;
+    margin: 0 auto;
   }
 `;
 
 export const InputWrapper = styled.div`
+  margin: 0 auto;
   width: 90%;
   max-width: 800px;
   display: flex;

@@ -13,12 +13,24 @@ import { useState, useEffect } from "react";
 
 export default function PostFooter({ title, setTitle, category, setCategory }) {
   const [nickname, setNickname] = useState("@User"); // 서버에서 받아올 사용자 닉네임 기본값
-
+  const categories = [
+    "ESSAY",
+    "POEM",
+    "NOVEL",
+    "BOOK",
+    "SOCIAL",
+    "ROMANCE",
+    "COMEDY",
+    "SF",
+    "FANTASY",
+  ];
   // 카테고리 선택 함수
   const handleClick = (e) => {
-    const selectedCategory = e.target.textContent;
+    // 클릭된 요소 확인
+    console.log(e.target);
 
     // 선택된 카테고리 값을 상태에 저장
+    const selectedCategory = e.target.innerText;
     setCategory(selectedCategory);
 
     // 모든 카테고리 항목에서 .click 클래스 제거
@@ -51,10 +63,11 @@ export default function PostFooter({ title, setTitle, category, setCategory }) {
       <CategoryWrapper>
         <div className="title">카테고리</div>
         <div className="categories">
-          <p onClick={handleClick}>에세이</p>
-          <p onClick={handleClick}>포엠</p>
-          <p onClick={handleClick}>노벨</p>
-          <p onClick={handleClick}>시나리오</p>
+          {categories.map((category, index) => (
+            <p key={index} onClick={handleClick}>
+              {category}
+            </p>
+          ))}
         </div>
       </CategoryWrapper>
       <Nickname>{nickname}</Nickname>

@@ -9,6 +9,7 @@ import Button from "../../components/Button/Button";
 import LoginPopup from "../../components/LoginPopup/LoginPopup";
 
 import SignUp from "../../components/SignUp/SignUp";
+import Sidebar from "../../components/SideBar/Sidebar";
 
 export default function Main({ login, setLogin }) {
   const [onModal, setOnModal] = useState(false); // 모달 상태 관리
@@ -27,14 +28,19 @@ export default function Main({ login, setLogin }) {
       )}
       {onModal2 && <SignUp setOnModal2={setOnModal2} />}
 
-      <Button />
-      <Header setOnModal={setOnModal} login={login} setLogin={setLogin} />
+      <Header
+        setOnModal={setOnModal}
+        setOnModal2={setOnModal2}
+        login={login}
+        setLogin={setLogin}
+      />
       <Img>
         <img src={MainImg} alt="main img" />
       </Img>
       <Contents />
       <Footer />
-      <Comments />
+      {login && <Button />}
+      {login && <Sidebar />}
     </>
   );
 }

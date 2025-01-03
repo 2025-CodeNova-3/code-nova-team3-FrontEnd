@@ -1,9 +1,10 @@
 import { Wrapper } from "./Header.styles";
 import Search from "../../assets/icons/search.svg";
 import Logo from "../../assets/icons/logo.svg";
+import Tmm from "../../assets/icons/Tmm.svg";
 import { useNavigate } from "react-router-dom";
 
-export default function Header({ setOnModal, login, setLogin }) {
+export default function Header({ setOnModal, setOnModal2, login, setLogin }) {
   const navigator = useNavigate();
 
   // 메인 페이지 이동
@@ -24,7 +25,7 @@ export default function Header({ setOnModal, login, setLogin }) {
   return (
     <Wrapper>
       <div className="title" onClick={handleMain}>
-        <img src={Logo} alt="Logo" />
+        <img src={Tmm} alt="Logo" />
       </div>
       <div className="left">
         {/* 로그인 상태에 따라 버튼 텍스트 변경 */}

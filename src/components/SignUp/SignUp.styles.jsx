@@ -18,12 +18,15 @@ export const Wrapper = styled.div`
 export const Modal = styled.div`
   background: #fff;
   position: relative;
-  width: 469px;
-  height: 602px;
+  width: 452px;
+  height: 441px;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 `;
 
 // 입력 필드 그룹
@@ -33,29 +36,41 @@ export const InputGroup = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  margin: 30px;
   text-align: left;
 
   label {
     display: block;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: bold;
     margin-bottom: 5px;
   }
 
-  div {
+  > div {
     display: flex;
     flex-direction: row;
-    gap: 15px;
-  }
+    margin-bottom: 10px;
+    justify-content: space-between;
+    > input {
+      width: 250px;
+      padding: 8px;
+      height: 30px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
 
-  input {
-    width: 285px;
-    height: 34px;
-    padding: 5px;
+      &::placeholder {
+        color: #aaa;
+      }
+    }
+  }
+  > input {
+    width: 340px;
+    padding: 8px;
+    height: 30px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 14px;
 
     &::placeholder {
       color: #aaa;
@@ -68,7 +83,7 @@ export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 10px;
+  margin-bottom: 5px;
 `;
 
 // 중복 확인 버튼
