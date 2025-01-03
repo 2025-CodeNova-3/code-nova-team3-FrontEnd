@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import delete1 from "../../assets/icons/delete1.svg";
 import delete2 from "../../assets/icons/delete2.svg";
 import Tmm from "../../assets/icons/Tmm.svg";
-import { Wrapper, LoginButton } from './LoginPopup.styles';
+import line from "../../assets/icons/line.svg";
+import { Wrapper, LoginButton, SigninButton } from './LoginPopup.styles';
 
 export default function LoginPopup({ setOnModal }) {
     const [id, setId] = useState("");
@@ -14,14 +15,7 @@ export default function LoginPopup({ setOnModal }) {
 
     return (
         <Wrapper>
-            <div
-                className="ModalContainer"
-                onClick={(e) => {
-                    if (e.target.className === "ModalContainer") {
-                        setOnModal(false); // 모달 외부 클릭 시 닫기
-                    }
-                }}
-            >
+            <div>
                 <div className="Modal">
                     <button
                         type="button"
@@ -81,6 +75,16 @@ export default function LoginPopup({ setOnModal }) {
                         >
                             로그인
                         </LoginButton>
+                        <SigninButton>
+                            <button onClick={(e) => {
+                                e.preventDefault();
+                            }}
+                            >
+                            <img src={line} />
+                            회원가입
+                            <img src={line} />
+                            </button>
+                        </SigninButton>
                     </form>
                 </div>
             </div>

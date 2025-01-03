@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    display: relative;
-
+    position: fixed;
+    top:290px;
+    left:150px;
 `;
 
 export const LoginButton = styled.button`
@@ -15,4 +16,11 @@ export const LoginButton = styled.button`
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
+`;
+
+export const SigninButton = styled.button`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 `;
