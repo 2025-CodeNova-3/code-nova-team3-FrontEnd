@@ -20,9 +20,6 @@ export const Comment = styled.div`
   > .comment {
     font-size: 14px;
   }
-  > .timer {
-    font-size: 10px;
-  }
 `;
 export const Wrapper = styled.div`
   border-top: 1px solid #5d5d5d;
