@@ -4,7 +4,6 @@ import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Contents from "../../components/Contents/Contents";
 import { Img } from "./Main.styles";
-import Comments from "../../components/Comments/Comments";
 import Button from "../../components/Button/Button";
 import LoginPopup from "../../components/LoginPopup/LoginPopup";
 
@@ -34,7 +33,6 @@ export default function Main({ login, setLogin }) {
       </Img>
       <Contents />
       <Footer />
-      <Comments />
     </>
   );
 }

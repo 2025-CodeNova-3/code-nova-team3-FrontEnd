@@ -12,6 +12,7 @@ const OutputPost = ({ login, setLogin }) => {
       <Header login={login} setLogin={setLogin} />
       <Output boardId={boardId} />
       <OutputFooter />
+      <Comments boardId={boardId} />
     </>
   );
 };
