@@ -1,27 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { Wrapper, Comment, InputWrapper, InputField, SubmitButton } from "./Comments.styles";
+import { useState, useEffect } from "react";
+import {
+  Wrapper,
+  Comment,
+  InputWrapper,
+  InputField,
+  SubmitButton,
+} from "./Comments.styles";
 
 export default function Comments({ boardId }) {
   const [comments, setComments] = useState([]); // 댓글 리스트 상태
   const [newComment, setNewComment] = useState(""); // 새 댓글 입력 상태
-
-  // 서버에서 댓글 데이터 가져오기
-  useEffect(() => {
-    const fetchComments = async () => {
-      try {
-        const response = await fetch(`/api/comments/boards/${boardId}`); // 서버 API 호출
-        if (!response.ok) {
-          throw new Error("댓글 데이터를 가져오는 데 실패했습니다.");
-        }
-        const data = await response.json(); // 댓글 데이터 (username, text, time)
-        setComments(data);
-      } catch (error) {
-        console.error("댓글 가져오기 오류:", error);
-      }
-    };
-
-    fetchComments();
-  }, [boardId]);
 
   // 댓글 등록 핸들러
   const handleSubmit = async () => {
@@ -63,12 +51,27 @@ export default function Comments({ boardId }) {
   return (
     <Wrapper>
       <div className="title">자유롭게 소통해요</div>
+      <Comment>
+        <div className="userid">sd</div>
+        <div className="comment">sd</div>
+        <div className="timer">sd</div>
+      </Comment>
+      <Comment>
+        <div className="userid">sd</div>
+        <div className="comment">sd</div>
+        <div className="timer">sd</div>
+      </Comment>
       {/* 댓글 리스트 */}
       {comments.map((comment, index) => (
         <Comment key={index}>
-          <div className="userid">{comment.username}</div>
-          <div className="comment">{comment.text}</div>
-          <div className="timer">{comment.time}</div>
+          <div>
+            <div className="userid">{comment.username}</div>
+            <div className="comment">{comment.text}</div>
+            <div className="timer">{comment.time}</div>
+          </div>
+          <div>
+            <img />
+          </div>
         </Comment>
       ))}
       {/* 댓글 입력창 */}

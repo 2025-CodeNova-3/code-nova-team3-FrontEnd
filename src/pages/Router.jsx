@@ -17,7 +17,7 @@ const Router = () => {
       element: <InputPost />,
     },
     {
-      path: "/outputpost/:id", // ✅ 동적 경로 설정
+      path: "/outputpost/:boardId", // ✅ 동적 경로 설정
       element: <OutputPost login={login} setLogin={setLogin} />,
     },
   ]);

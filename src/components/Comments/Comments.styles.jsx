@@ -1,14 +1,18 @@
 import styled from "styled-components";
 
 export const Comment = styled.div`
-  width: 100%;
-  border: 0.5px solid white;
+  width: 542px;
+  height: 92px;
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+
   color: white;
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 5px;
   color: #9c9c9c;
+  background-color: #727272;
   box-sizing: border-box;
   > .userId {
     font-size: 12px;
@@ -55,8 +59,8 @@ export const InputField = styled.input`
   border: none;
   border-radius: 10px;
   outline: none;
-  color: #9C9C9C;
-  background-color: #FFFFFF;
+  color: #9c9c9c;
+  background-color: #ffffff;
   margin-right: 10px;
 `;
 
@@ -64,7 +68,7 @@ export const SubmitButton = styled.button`
   padding: 10px 20px;
   font-size: 16px;
   color: white;
-  background-color: #EC3F0A;
+  background-color: #ec3f0a;
   border: none;
   border-radius: 10px;
   cursor: pointer;
