@@ -2,7 +2,7 @@ import OutputFooter from "../../components/OutputFooter/OutputFooter";
 import Header from "../../components/Header/Header";
 import Output from "../../components/Output/Output";
 
-const OutputPost = () => {
+const OutputPost = ({ login, setLogin }) => {
   return (
     <>
       <Header />

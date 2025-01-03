@@ -43,25 +43,25 @@ const PostTimeSet = ({ selectedOption, setSelectedOption, setCustomInput }) => {
               <ul className="optionList">
                 <li
                   className="optionItem"
-                  onClick={() => handleOptionSelect("30")}
+                  onClick={() => handleOptionSelect(30)}
                 >
                   30분
                 </li>
                 <li
                   className="optionItem"
-                  onClick={() => handleOptionSelect("60")}
+                  onClick={() => handleOptionSelect(60)}
                 >
                   60분
                 </li>
                 <li
                   className="optionItem"
-                  onClick={() => handleOptionSelect("90")}
+                  onClick={() => handleOptionSelect(90)}
                 >
                   90분
                 </li>
                 <li
                   className="optionItem"
-                  onClick={() => handleOptionSelect("120")}
+                  onClick={() => handleOptionSelect(120)}
                 >
                   120분
                 </li>
