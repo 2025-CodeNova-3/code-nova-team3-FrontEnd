@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./Main/Main";
 import InputPost from "./InputPost/InputPost";
 import OutputPost from "./OutputPost/OutputPost";
+import Test from "./test";
 
 const Router = () => {
   const router = createBrowserRouter([
