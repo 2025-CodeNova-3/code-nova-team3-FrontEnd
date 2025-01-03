@@ -2,7 +2,7 @@ import { Wrapper, Logo, Desc, Contact } from "./Footer.styles";
 import LogoImg from "../../assets/icons/logoB.svg";
 import Kako from "../../assets/icons/kakao.svg";
 import Instargram from "../../assets/icons/instargram.svg";
-import Pen from "../../assets/icons/pen.svg";
+import Pen from "../../assets/icons/sharp.svg";
 import Naver from "../../assets/icons/naver.svg";
 
 export default function Footer() {
