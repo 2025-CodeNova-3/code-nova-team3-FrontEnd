@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Wrapper } from "./FirstInput.styles"
 
-const FirstInput = () => {
-  const [content1, setContent1] = useState("");
-
+const FirstInput = ({ setContent1 }) => {
   const handleChange = (e) => {
     setContent1(e.target.value);
   };
@@ -12,7 +10,6 @@ const FirstInput = () => {
     <>
     <Wrapper>
       <textarea
-        value={content1}
         onChange={handleChange}
         placeholder="자유롭게 글을 작성해보세요"
       />

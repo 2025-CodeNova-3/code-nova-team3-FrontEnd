@@ -3,16 +3,11 @@ import Kakao from "../../assets/icons/kakao.svg";
 import Instargram from "../../assets/icons/instargram.svg";
 import Pen from "../../assets/icons/pen.svg";
 import Naver from "../../assets/icons/naver.svg";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 
-export default function Footer() {
-    const [title, setTitle] = useState("");
+export default function PostFooter({ title, setTitle, category, setCategory }) {
     const [nickname, setNickname] = useState("@User"); // 서버에서 받아올 사용자 닉네임 기본값
-
-    const handleTitleChange = (e) => {
-        setTitle(e.target.value);
-    };
 
     useEffect(() => {
         // 서버에서 사용자 닉네임 가져오는 로직 (예제)
@@ -28,7 +23,7 @@ export default function Footer() {
                 <input
                     type="text"
                     value={title}
-                    onChange={handleTitleChange}
+                    onChange={(e) => setTitle(e.target.value)}
                     placeholder="제목"
                 />
                 <hr />
@@ -37,7 +32,9 @@ export default function Footer() {
                 <div>
                     카테고리
                 </div>
-                <select>
+                <select
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}>
                     <option value="essay">에쎄이</option>
                     <option value="poem">포엠</option>
                     <option value="art">아트</option>

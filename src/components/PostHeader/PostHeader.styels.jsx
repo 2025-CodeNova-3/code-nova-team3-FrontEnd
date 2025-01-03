@@ -15,10 +15,16 @@ export const Wrapper = styled.div`
   > .left {
     display: flex;
     > button {
-      background-color: white;
+      color: white;
+      background-color: black;
       margin-right: 40px;
       font-weight: 600;
       font-size: 10px;
+      display: flex; /* 버튼 내부의 요소를 flex로 배치 */
+      flex-direction: row; /* 텍스트와 이미지가 가로로 배치되도록 설정 */
+      align-items: center; /* 텍스트와 이미지를 수직 가운데 정렬 */
+      gap: 3px; /* 텍스트와 이미지 사이 간격 */
+      padding: 5px 10px; /* 버튼 내부 여백 */
     }
     > form {
       display: flex;
