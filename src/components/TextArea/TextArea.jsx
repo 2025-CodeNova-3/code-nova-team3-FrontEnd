@@ -1,9 +1,9 @@
 import React from "react";
-import { Wrapper } from "./SecondInput.styles"
+import { Wrapper } from "./TextArea.styles"
 
-const SecondInput = ({setContent2}) => {
+const TextArea = ({ setContent, placeholder }) => {
   const handleChange = (e) => {
-    setContent2(e.target.value);
+    setContent(e.target.value);
   };
 
   return (
@@ -11,7 +11,7 @@ const SecondInput = ({setContent2}) => {
       <Wrapper>
         <textarea
           onChange={handleChange}
-          placeholder="의도나 해석을 알려주세요"
+          placeholder={placeholder}
         />
       </Wrapper>
       <hr style={{ border: "none", borderTop: "1px solid #dbdbdb", marginTop: "5px", marginBottom: "5px" }} />
@@ -19,4 +19,4 @@ const SecondInput = ({setContent2}) => {
   );
 };
 
-export default SecondInput;
+export default TextArea;

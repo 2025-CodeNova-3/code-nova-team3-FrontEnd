@@ -1,7 +1,7 @@
 import React from "react";
 import { TimeTable, Select, Input, Text } from "./PostTimeSet.styles";
 
-const PostTimeSet = ({ setSelectedOption, setCustomInput }) => {
+const PostTimeSet = ({ selectedOption, setSelectedOption, setCustomInput }) => {
     const handleSelectChange = (e) => {
         setSelectedOption(e.target.value); // 드롭다운 선택값 업데이트
     };
@@ -13,16 +13,18 @@ const PostTimeSet = ({ setSelectedOption, setCustomInput }) => {
     return (
         <TimeTable>
             <Text>이 내용은</Text>
-            {/* 조건부 렌더링: 선택값이 "direct"일 경우 입력 필드 표시 */}
-            <Select onChange={handleSelectChange}>
-                <option value="">항목 선택</option>
-                <option value="30">30분</option>
-                <option value="60">60분</option>
-                <option value="90">90분</option>
-                <option value="120">120분</option>
-                <option value="direct">직접입력</option>
-            </Select>
-            {setSelectedOption === "direct" && (
+            <Text>이 내용은</Text>
+            {/* 조건부 렌더링: selectedOption이 "direct"일 경우 드롭다운 숨기기 */}
+            {selectedOption !== "direct" ? (
+                <Select onChange={handleSelectChange}>
+                    <option value="">항목 선택</option>
+                    <option value="30">30분</option>
+                    <option value="60">60분</option>
+                    <option value="90">90분</option>
+                    <option value="120">120분</option>
+                    <option value="direct">직접입력</option>
+                </Select>
+            ) : (
                 <Input
                     type="text"
                     onChange={handleInputChange}
