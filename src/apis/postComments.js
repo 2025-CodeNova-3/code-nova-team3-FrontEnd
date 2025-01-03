@@ -1,5 +1,6 @@
 import instance from "./instance";
-const GetPaged = async (category = "BRAND", currentPage) => {
+
+const PostComments = async ({ boardId, content }) => {
   const token = sessionStorage.getItem("accessToken");
 
   if (!token) {
@@ -8,10 +9,13 @@ const GetPaged = async (category = "BRAND", currentPage) => {
   }
 
   try {
-    const response = await instance.get(
-      `api/boards/paged?boardCategory=${category}&page=${
-        currentPage - 1
-      }&size=10`,
+    // POST 요청
+    const response = await instance.post(
+      `/api/comments/boards/${boardId}`,
+      {
+        content: content,
+        beforeOpen: true, // 항상 true로 설정
+      },
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -21,11 +25,11 @@ const GetPaged = async (category = "BRAND", currentPage) => {
     return response.data;
   } catch (error) {
     if (error.response) {
-      console.log(error.response);
+      console.error(error.response);
       if (error.response.status === 401) {
         alert("잘못된 요청입니다.");
       } else if (error.response.status === 500) {
-        alert("page를 가져올 수 없습니다.");
+        alert("댓글을 저장할 수 없습니다.");
       } else {
         alert("잠시 후 다시 시도해주세요.");
       }
@@ -34,4 +38,4 @@ const GetPaged = async (category = "BRAND", currentPage) => {
   }
 };
 
-export default GetPaged;
+export default PostComments;

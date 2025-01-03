@@ -12,7 +12,7 @@ const InputPost = () => {
   const [title, setTitle] = useState(""); // PostFooter의 제목
   const [category, setCategory] = useState(""); // PostFooter의 카테고리
   const [timeOption, setTimeOption] = useState(""); // PostTimeSet의 선택된 옵션
-  const [customTime, setCustomTime] = useState(""); // PostTimeSet의 직접 입력 값
+  const [customTime, setCustomTime] = useState(0); // PostTimeSet의 직접 입력 값
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,14 +35,13 @@ const InputPost = () => {
 
       // openDuration 숫자 변환
       const duration = Number(timeOption || customTime);
-      if (isNaN(duration)) {
-        alert("시간은 숫자여야 합니다.");
-        return;
+      if (!duration || isNaN(duration)) {
+        setCustomTime(0);
       }
 
       // API 요청 데이터 구성
       const requestData = {
-        boardCategory: "BRAND",
+        boardCategory: category,
         title: title,
         openContent: content1,
         hiddenContent: content2,
