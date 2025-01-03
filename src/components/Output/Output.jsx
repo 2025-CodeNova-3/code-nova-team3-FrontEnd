@@ -1,14 +1,15 @@
 import { Wrapper } from "./Output.styles";
-import Timer from "../Timer/Timer";
 import { useEffect, useState } from "react";
 import GetPost from "../../apis/getPost";
-import { data } from "react-router-dom";
+import Timer from "../Timer/Timer";
+import TimerSkeleton from "../TimerSkeleton/TimerSkeleton";
 
 const Output = ({ boardId }) => {
   console.log(boardId);
   const [postData, setPostData] = useState("");
   const [loading, setLoading] = useState(true);
   const [hidden, setHidden] = useState(false);
+
   useEffect(() => {
     const fetchPostData = async () => {
       try {
@@ -26,17 +27,21 @@ const Output = ({ boardId }) => {
       fetchPostData();
     }
   }, [boardId]);
+
   return (
     <div style={{ marginTop: "100px" }}>
       <Wrapper>{postData.openContent}</Wrapper>
       {hidden && <Wrapper>{postData.hiddenContent}</Wrapper>}
-      {!hidden && (
-        <Timer
-          setHidden={setHidden}
-          openTime={postData.openTime}
-          color={"#787878"}
-        />
-      )}
+      {!hidden &&
+        (loading ? (
+          <TimerSkeleton />
+        ) : (
+          <Timer
+            setHidden={setHidden}
+            openTime={postData.openTime}
+            color={"#787878"}
+          />
+        ))}
     </div>
   );
 };
