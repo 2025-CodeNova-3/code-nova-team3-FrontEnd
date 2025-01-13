@@ -1,4 +1,8 @@
 [Code Nova T'mm 발표 자료.pdf](https://github.com/user-attachments/files/18394504/Code.Nova.T.mm.pdf)
+
+![image](https://github.com/user-attachments/assets/dc2f86c8-01c5-4337-afd3-9a420b473ebf)
+
+
 # T'mm: 무명이더라도 기재부터 협업까지 한 번에
 
 T'mm(틈)은 감상자에게 작성자 정보와 글의 의도를 바로 공개하는 것이 아니라 일정한 **텀**(시간 간격)을 두고 공개하는 커뮤니티 플랫폼입니다. 이를 통해 다양한 해석을 촉진하고, 창작자와 감상자 간의 새로운 소통 방식을 제공합니다.
@@ -26,6 +30,8 @@ T'mm은 이런 문제를 해결하기 위해 **선공개**와 **후공개** 구�
   → 국내 시장의 1%만 점유하더라도 약 103억 9천만 원의 매출 가능
 
 ---
+
+![image](https://github.com/user-attachments/assets/115894e1-31ec-4217-9217-b3d815ad9655)
 
 ## Pain Point
 
