@@ -1,7 +1,6 @@
 # ✨ T'mm: 무명이더라도 기재부터 협업까지 한 번에
 
 [📄 발표 자료](https://github.com/user-attachments/files/18394504/Code.Nova.T.mm.pdf)  
-[▶ 실행 영상](https://youtu.be/rcUROVCI6xY?feature=shared)
 
 **T'mm(틈)**은 감상자에게 작성자 정보와 글의 의도를 바로 공개하지 않고 일정한 **텀**(시간 간격)을 두고 공개하는 커뮤니티 플랫폼입니다.  
 이를 통해 다양한 해석을 촉진하고, 창작자와 감상자 간의 새로운 소통 방식을 제공합니다.
